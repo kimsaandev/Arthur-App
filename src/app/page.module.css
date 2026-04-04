@@ -1,0 +1,226 @@
+.main {
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 5vh 1rem;
+  box-sizing: border-box;
+  background-image: url('/main_bg.jpg');
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-color: #f19738;
+}
+
+.landingMain {
+  height: 100dvh;
+  position: fixed;
+  /* 페이지 전체를 못에 박은 것처럼 화면에 고정 */
+  top: 0;
+  left: 0;
+  width: 100vw;
+  overflow: hidden;
+  overscroll-behavior: none;
+  /* 브라우저 자체의 튕겨짐 방지 */
+  touch-action: none;
+  /* 스크롤 액션 원천 무효화 */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  box-sizing: border-box;
+  background-color: #f19738;
+  padding-bottom: 2vh;
+  /* 최소 하단 마진을 컨테이너 수준에서 보장 */
+}
+
+.headerImage {
+  width: 85%;
+  /* 기본 사이즈 15% 축소 */
+  max-width: 510px;
+  /* 최대폭도 15% 축소 */
+  height: auto;
+  object-fit: contain;
+  margin-top: auto;
+  /* 위쪽 여백을 자동으로 채워 상단 이미지의 최상단이 스크롤 한계선 역할 수행 */
+}
+
+.footerImage {
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  object-fit: contain;
+  margin-bottom: auto;
+  /* auto를 설정하여 상단 margin-top: auto와 함께 중앙 정렬을 완성합니다. */
+}
+
+.title,
+.subtitle {
+  display: none;
+  /* 배경 이미지에 포함되어 있으므로 기존 텍스트는 숨김 */
+}
+
+.container {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 24px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  width: 300px;
+  text-align: center;
+  transition: transform 0.2s;
+}
+
+.imageContainer {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  border-radius: 8px;
+  background: #eee;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.uploadArea {
+  width: 100%;
+  height: 200px;
+  border: 2px dashed #ccc;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  background: #fafafa;
+  overflow: hidden;
+}
+
+.preview {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.uploadPlaceholder {
+  color: #999;
+}
+
+.generateBtn {
+  margin-top: 0;
+  padding: 1rem 1rem;
+  height: 60px;
+  /* 버튼의 크기가 두 줄로 늘어나지 않도록 고정 */
+  font-size: clamp(1rem, 5vw, 1.5rem);
+  /* 해상도가 작아지면 글씨도 동적으로 작아짐 */
+  white-space: nowrap;
+  /* 글씨가 2단으로 줄바꿈되는 현상 원천 차단 */
+  background: #ff6b6b;
+  color: white;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  box-shadow: 0 4px 0 #d63031;
+  transition: all 0.1s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.generateBtn:active {
+  transform: translateY(4px);
+  box-shadow: none;
+}
+
+.generateBtn:disabled {
+  background: #ccc;
+  box-shadow: none;
+  cursor: not-allowed;
+}
+
+.message {
+  margin-top: 1rem;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  max-width: 600px;
+  text-align: center;
+}
+
+.resultCard {
+  margin-top: 2rem;
+  width: auto;
+  min-width: 300px;
+}
+
+.resultImage {
+  max-width: 100%;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.downloadLink {
+  display: inline-block;
+  padding: 0.5rem 1.5rem;
+  background: #4ecdc4;
+  color: white;
+  border-radius: 20px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+
+.buttonGroup {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.backBtn {
+  padding: 0.5rem 1.5rem;
+  background: #ff6b6b;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.loadingContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 2rem;
+}
+
+.loader {
+  border: 8px solid #f3f3f3;
+  border-top: 8px solid #ff6b6b;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  animation: spin 1s linear infinite;
+  margin-bottom: 1rem;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}

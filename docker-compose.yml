@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  arthur-app:
+    image: arthur-app:latest
+    container_name: arthur-party
+    restart: always
+    ports:
+      - "3000:3000" # 나스에 3000번 포트가 이미 사용 중이라면 "3001:3000" 등으로 변경하세요.
+    environment:
+      - NODE_ENV=production
+      - ENCRYPTION_KEY=arthur-party-secret-key-12345678 # 보안을 위해 관리자 페이지 키와 동일하게 설정 가능
+    volumes:
+      # 나스의 특정 폴더와 앱 데이터 폴더를 연결 (데이터 보존)
+      - ./data:/app/data
+      - ./public/uploads:/app/public/uploads
+      - ./logs:/app/logs
+      - ./results:/app/results

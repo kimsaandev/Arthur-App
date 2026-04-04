@@ -1,0 +1,5 @@
+@font-face {
+    font-family: 'NanumPen';
+    src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumBrush/NanumPen.eot);
+    src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumBrush/NanumPen.eot?#iefix) format("embedded-opentype"), url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumBrush/NanumPen.woff) format("woff"), url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumBrush/NanumPen.ttf) format("truetype");
+}
