@@ -1,3 +1,5 @@
+export const dynamic = 'force-dynamic';
+
 import type { Metadata } from "next";
 import { Noto_Sans_KR } from "next/font/google";
 import "./globals.css";
@@ -8,10 +10,6 @@ const notoSansKr = Noto_Sans_KR({
   weight: ["400", "500", "700"],
   variable: "--font-noto-sans",
 });
-
-
-
-
 
 export const metadata: Metadata = {
   title: "Arthur Party",
@@ -30,9 +28,8 @@ export default function RootLayout({
 
   // 선택된 폰트에 따른 클래스 결정
   let fontClass = notoSansKr.className;
-  // 기존 gaegu 값을 가지고 있던 환경도 마루부리로 매끄럽게 넘어오도록 호환성 유지
   if (activeFont === 'maruburi' || activeFont === 'gaegu') fontClass = 'font-maruburi';
-  if (activeFont === 'nanum-world' || activeFont === 'grandiflora') fontClass = 'font-nanum-world'; // 기존 grandiflora 선택자도 대응
+  if (activeFont === 'nanum-world' || activeFont === 'grandiflora') fontClass = 'font-nanum-world';
   if (activeFont === 'nanum-gangbujang') fontClass = 'font-nanum-gangbujang';
   if (activeFont === 'nanum-sea') fontClass = 'font-nanum-sea';
 
@@ -65,7 +62,7 @@ export default function RootLayout({
         />
         {/* End Google Tag Manager */}
         <link href="https://hangeul.pstatic.net/hangeul_static/css/maru-buri.css" rel="stylesheet" />
-        <link href="https://hangeul.pstatic.net/hangeul_static/css/NanumSeGyeJeogInHanGeur.css" rel="stylesheet" />
+        <link href="https://hangeul.pstatic.net/hangeul_static/css/NanumSeGyeJeokInHanGeur.css" rel="stylesheet" />
         <link href="https://hangeul.pstatic.net/hangeul_static/css/NanumGangBuJangNimCe.css" rel="stylesheet" />
         <link href="https://hangeul.pstatic.net/hangeul_static/css/NanumSeACe.css" rel="stylesheet" />
       </head>
